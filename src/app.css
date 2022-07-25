@@ -1,0 +1,44 @@
+/* Write your global styles here, in PostCSS syntax */
+
+@tailwind base;
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--brand-red: #d60033;
+	--brand-green: #7ffe6a;
+	--brand-blue: #4400d6;
+}
+
+section {
+	@apply my-4 mx-2;
+}
+
+.brand-red-bg {
+	background-color: var(--brand-red);
+}
+
+.brand-green-bg {
+	background-color: var(--brand-green);
+}
+
+.fullscreen {
+	width: 100%;
+	height: 100%;
+}
+
+.brand-blue-bg {
+	background-color: var(--brand-blue);
+}
+
+html,
+body {
+	font-family: 'Fira Code', 'monospace';
+	@apply bg-black text-white;
+}
+
+@tailwind components;
+
+@tailwind utilities;
