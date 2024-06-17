@@ -1,28 +1,15 @@
-"use client"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import HoverLink from "./components/hoverLink";
+import HoverLink from "../components/hoverLink";
 import Link from "next/link";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { HighlightText as Ht } from "./components/highlightText";
-import { useState } from "react";
-import { Ribbon } from "./components/Ribbon";
-import { SkillFall } from "./components/skillFalls";
+import { HighlightText as Ht } from "../components/highlightText";
 
-export default function Dashboard() {
-  const [ribbonActive, setRibbonActive] = useState(false);
+export default function ProjectsPage() {
+  
   return (
     <main>
-      <div
-        onMouseEnter={() => setRibbonActive(true)}
-        onMouseLeave={() => setRibbonActive(false)}
-        className={`absolute top-0 right-16 transition-all ease-in-out duration-300 ${
-          ribbonActive ? "translate-y-0" : "-translate-y-14"
-        }`}
-      >
-        <Ribbon />
-
+      <div className="w-56 h-40 absolute -top-32 -right-4 bg-accent rotate-45 rounded-xl">
       </div>
-      <SkillFall active={ribbonActive} />
       <div className="absolute top-40 right-40">
         <h1 className="text-7xl font-bold">
           <p>
@@ -32,9 +19,7 @@ export default function Dashboard() {
             <Ht>V</Ht>asan
           </p>
         </h1>
-        <p className="mt-4 opacity-70">
-          Software Engineer . Full Stack . DevOps
-        </p>
+        <p className="mt-4 opacity-70">Software Engineer . Full Stack . DevOps</p>
       </div>
       <div className="pl-12 py-8 absolute bottom-12 left-12">
         <section className="flex flex-col justify-start gap-8 mb-24 text-lg">

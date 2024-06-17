@@ -1,0 +1,7 @@
+
+.ribbonTriangle {
+    width: 0;
+    height: 0;
+    border: solid 4rem;
+    border-color: rgb(102 255 108) transparent transparent transparent;
+}
