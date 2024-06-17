@@ -30,6 +30,7 @@ export default function Dashboard() {
           </p>
           <p className="mt-4">
             <Ht>V</Ht>asan
+            <Ht>.</Ht>
           </p>
         </h1>
         <p className="mt-4 opacity-70">

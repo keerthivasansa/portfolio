@@ -10,12 +10,23 @@ export interface Skill {
 }
 
 export function SkillFall({ active }: { active: boolean }) {
-  const [curr, setCurr] = useState<string[]>([]);
+  const [curr, setCurr] = useState<{ id: string; name: string }[]>([]);
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
 
   function addSkill() {
     const index = Math.floor(getRandValue(0, allSkills.length));
-    setCurr((arr) => [...arr, allSkills[index]]);
+    const name = allSkills[index];
+    setCurr((arr) => [
+      ...arr,
+      {
+        name,
+        id: `${name}-${arr.length}`,
+      },
+    ]);
+  }
+
+  function deleteId(id: string) {
+    setCurr((arr) => arr.filter((node) => node.id != id));
   }
 
   function setActive() {
@@ -35,8 +46,12 @@ export function SkillFall({ active }: { active: boolean }) {
 
   return (
     <>
-      {curr.map((sk, index) => (
-        <FloatingSkill key={index} skillName={sk} />
+      {curr.map((sk) => (
+        <FloatingSkill
+          key={sk.id}
+          deleteFn={() => deleteId(sk.id)}
+          skillName={sk.name}
+        />
       ))}
     </>
   );

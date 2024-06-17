@@ -23,11 +23,12 @@ export const skills: Record<string, Skill> = {
         color: '#006363'
     },
     'AWS': {
-        color: '#FFB57F'
+        color: '#FFB57F',
+        font: 'black'
     },
     'NextJS': {
         color: 'black',
-        border: 'black'
+        border: 'white'
     },
     'Typescript': {
         color: '#10175E',
