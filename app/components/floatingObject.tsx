@@ -25,8 +25,8 @@ export default function FloatingSkill({
 
   useEffect(() => {
     if (y > window.outerHeight + 100 && timer.current) {
-      clearTimeout(timer.current);
       deleteFn();
+      clearTimeout(timer.current);
     }
   }, [y]);
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import FloatingSkill from "./floatingObject";
 import { getRandValue } from "../utils";
 import { allSkills } from "../data/skills";
@@ -16,11 +16,13 @@ export function SkillFall({ active }: { active: boolean }) {
   function addSkill() {
     const index = Math.floor(getRandValue(0, allSkills.length));
     const name = allSkills[index];
+    const id = crypto.randomUUID();
+
     setCurr((arr) => [
       ...arr,
       {
         name,
-        id: `${name}-${arr.length}`,
+        id,
       },
     ]);
   }
