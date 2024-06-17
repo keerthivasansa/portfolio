@@ -44,7 +44,7 @@ export function SkillFall({ active }: { active: boolean }) {
   function setActive() {
     if (timer) return;
     addSkill();
-    const timerId = setInterval(addSkill, 3000);
+    const timerId = setInterval(addSkill, 1500);
     setTimer(timerId);
   }
 

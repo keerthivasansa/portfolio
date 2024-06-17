@@ -1,20 +1,19 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getRandValue } from "../utils";
 import { Skill } from "./skillFalls";
 
 // TODO Later implement.
 export default function FloatingSkill({ skill }: { skill: Skill }) {
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(-100);
+  const x = useRef(getRandValue(0, window.innerWidth));
+  const acceleration = useRef(getRandValue(10, 25));
+  const [y, setY] = useState(-40);
 
   function increaseY() {
-    setY((y) => y + 10);
+    setY((y) => y + acceleration.current);
   }
 
   useEffect(() => {
-    const xVal = getRandValue(0, window.innerWidth);
-    setX(xVal);
     setInterval(increaseY, 250);
   }, []);
 
@@ -22,7 +21,7 @@ export default function FloatingSkill({ skill }: { skill: Skill }) {
     <span
       style={{
         transform: `translateY(${y}px)`,
-        left: `${x}px`,
+        left: `${x.current}px`,
         backgroundColor: skill.color,
         color: skill.font || "white",
       }}
