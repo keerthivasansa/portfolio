@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import FloatingSkill from "./floatingObject";
 import { getRandValue } from "../utils";
+import { allSkills } from "../data/skills";
 
 export interface Skill {
   color: string;
@@ -9,36 +10,12 @@ export interface Skill {
 }
 
 export function SkillFall({ active }: { active: boolean }) {
-  const [curr, setCurr] = useState<Skill[]>([]);
+  const [curr, setCurr] = useState<string[]>([]);
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
 
-  const skills: Skill[] = [
-    {
-      color: "blue",
-      name: "React",
-    },
-    {
-      color: "orange",
-      name: "Svelte",
-    },
-    {
-      color: "black",
-      name: "NextJS",
-    },
-    {
-      color: "red",
-      name: "Angular",
-    },
-    {
-      color: "yellow",
-      font: "black",
-      name: "Javascript",
-    },
-  ];
-
   function addSkill() {
-    const index = Math.floor(getRandValue(0, skills.length));
-    setCurr((arr) => [...arr, skills[index]]);
+    const index = Math.floor(getRandValue(0, allSkills.length));
+    setCurr((arr) => [...arr, allSkills[index]]);
   }
 
   function setActive() {
@@ -59,7 +36,7 @@ export function SkillFall({ active }: { active: boolean }) {
   return (
     <>
       {curr.map((sk, index) => (
-        <FloatingSkill key={index} skill={sk} />
+        <FloatingSkill key={index} skillName={sk} />
       ))}
     </>
   );
