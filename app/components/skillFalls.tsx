@@ -31,10 +31,14 @@ export function SkillFall({ active }: { active: boolean }) {
     setCurr((arr) => arr.filter((node) => node.id != id));
   }
 
+  function spawnObjects() {
+    for (let i = 0; i < 10; i++) addSkill();
+  }
+
   function setActive() {
     if (timer) return;
-    addSkill();
-    const timerId = setInterval(addSkill, 1500);
+    spawnObjects();
+    const timerId = setInterval(spawnObjects, 800);
     setTimer(timerId);
   }
 
