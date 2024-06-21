@@ -1,57 +1,68 @@
 
 export interface Skill {
     color: string;
-    font ?: string;
-    border ?: string;
+    dark?: boolean
 }
 
 export const skills: Record<string, Skill> = {
     'React': {
-        color: '#61C6FF',
-        font: 'black',
-        border: 'black'
+        color: '#89EAFF',
     },
     'Javascript': {
         color: '#FFE661',
-        font: 'black',
-        border: 'black'
     },
     'Angular': {
-        color: '#630000'
+        color: '#630000',
+        dark: true,
     },
     'Golang': {
-        color: '#006363'
+        color: '#006363',
+        dark: true,
     },
     'AWS': {
         color: '#FFB57F',
-        font: 'black'
     },
     'NextJS': {
         color: 'black',
-        border: 'white'
+        dark: true,
     },
     'Typescript': {
         color: '#10175E',
+        dark: true,
     },
     'Python': {
         color: '#00500D',
+        dark: true,
     },
     'Java': {
         color: '#4E2100',
     },
     'Docker': {
         color: '#61C6FF',
-        font: 'black',
-        border: 'black'
     },
     'SQL': {
         color: '#FF8E09',
-        font: 'black',
-        border: 'black'
     },
     'Git': {
-        color: '#10175E',
-    }
+        color: '#FFDEAD',
+    },
+    'Django': {
+        color: '#A8FF89',
+    },
+    'Strapi': {
+        color: '#4D18BE',
+        dark: true,
+    },
+    'Express': {
+        color: '#3D3C3F',
+        dark: true,
+    },
+    'APIs': {
+        color: '#C2ADFF'
+    },
+    'MySQL': {
+        color: '#ADEBFF'
+    },
 }
 
 export const allSkills = Object.keys(skills);

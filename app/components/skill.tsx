@@ -6,11 +6,11 @@ export function SkillChip({ name }: { name: string }) {
   return skill ? (
     <span
       style={{
-        border: `2px solid ${skill.border || "transparent"}`,
+        border: `2px solid ${skill.dark ? "white" : "transparent"}`,
         backgroundColor: skill.color,
-        color: skill.font || "white",
+        color: skill.dark ? "white" : "black",
       }}
-      className="px-12 py-3 rounded-lg"
+      className="px-8 py-2 rounded-lg font-semibold"
     >
       {name}
     </span>
