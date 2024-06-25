@@ -1,53 +1,33 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import HoverLink from "../components/hoverLink";
-import Link from "next/link";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { HighlightText as Ht } from "../components/highlightText";
+import ProjectCard from "../components/projectCard";
+import { Project } from "../data/types";
 
 export default function ProjectsPage() {
-  
+  const p: Project = {
+    description: "on-demand anime streaming",
+    name: "Animos",
+    highlights: [
+      "Designed directly under Unacademy's CTO during internship",
+      "#2 in ProductHunt in its launch week",
+    ],
+    image:
+      "https://camo.githubusercontent.com/73ad26b8ea538b9b809cf558d9de42d5bda9877039edc332a6eb42336c9bde0a/68747470733a2f2f696b2e696d6167656b69742e696f2f7538686575396a68712f4865616465725f42616e6e65722e706e67",
+    skills: ["React", "NextJS", "Javascript", "Strapi", "Django"],
+    links: [
+      {
+        name: "github",
+        url: "https://www.github.com",
+      },
+      {
+        name: "open",
+        url: "https://www.twitter.com",
+      },
+    ],
+  };
   return (
     <main>
-      <div className="w-56 h-40 absolute -top-32 -right-4 bg-accent rotate-45 rounded-xl">
-      </div>
-      <div className="absolute top-40 right-40">
-        <h1 className="text-7xl font-bold">
-          <p>
-            <Ht>K</Ht>eerthi
-          </p>
-          <p className="mt-4">
-            <Ht>V</Ht>asan
-          </p>
-        </h1>
-        <p className="mt-4 opacity-70">Software Engineer . Full Stack . DevOps</p>
-      </div>
-      <div className="pl-12 py-8 absolute bottom-12 left-12">
-        <section className="flex flex-col justify-start gap-8 mb-24 text-lg">
-          <HoverLink href="/skills">Skills</HoverLink>
-          <HoverLink href="/projects" switchColor>
-            Projects
-          </HoverLink>
-          <HoverLink href="/experience">Experience</HoverLink>
-          <HoverLink href="/about" switchColor>
-            About
-          </HoverLink>
-          <HoverLink href="contact">Contact</HoverLink>
-          <HoverLink href="skills" switchColor>
-            Let&apos;s Connect
-          </HoverLink>
-        </section>
-        <footer className="flex flex-row gap-8 items-center">
-          <Link href="https://linkedin.com/in/keerthivasansa">
-            <FontAwesomeIcon icon={faLinkedin} size="xl" />
-          </Link>
-          <Link href="https://github.com/keerthivasansa">
-            <FontAwesomeIcon icon={faGithub} size="xl" />
-          </Link>
-          <a href="mailto:keerthivasansa@outlook.com">
-            keerthivasansa@outlook.com
-          </a>
-        </footer>
-      </div>
+      <h1 className="text-3xl font-bold p-12 px-14">Projects</h1>
+      <ProjectCard project={p} />
     </main>
   );
 }
