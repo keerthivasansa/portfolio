@@ -21,13 +21,13 @@ export default function Dashboard() {
           ribbonActive ? "translate-y-0" : "-translate-y-14"
         }`}
       >
-        <SlideIn delay={100} direction="top">
+        <SlideIn delay={200} direction="top">
           <Ribbon />
         </SlideIn>
       </div>
       <SkillFall active={ribbonActive} />
       <div className="absolute top-40 right-40">
-        <FadeIn delay={50}>
+        <FadeIn delay={150}>
           <h1 className="text-7xl font-bold">
             <p>
               <Ht>K</Ht>eerthi
@@ -43,7 +43,7 @@ export default function Dashboard() {
         </FadeIn>
       </div>
       <div className="pl-12 py-8 absolute bottom-12 left-12">
-        <FadeIn delay={100}>
+        <FadeIn delay={200}>
           <section className="flex flex-col justify-start gap-8 mb-24 text-lg">
             <HoverLink href="/skills">Skills</HoverLink>
             <HoverLink href="/projects" switchColor>
@@ -58,18 +58,22 @@ export default function Dashboard() {
               Let&apos;s Connect
             </HoverLink>
           </section>
+          <footer className="flex flex-row gap-8 items-center">
+            <Link href="https://linkedin.com/in/keerthivasansa">
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                aria-label="LinkedIn"
+                size="xl"
+              />
+            </Link>
+            <Link href="https://github.com/keerthivasansa">
+              <FontAwesomeIcon icon={faGithub} aria-label="GitHub" size="xl" />
+            </Link>
+            <a href="mailto:keerthivasansa@outlook.com">
+              keerthivasansa@outlook.com
+            </a>
+          </footer>
         </FadeIn>
-        <footer className="flex flex-row gap-8 items-center">
-          <Link href="https://linkedin.com/in/keerthivasansa">
-            <FontAwesomeIcon icon={faLinkedin} aria-label="LinkedIn" size="xl" />
-          </Link>
-          <Link href="https://github.com/keerthivasansa">
-            <FontAwesomeIcon icon={faGithub} aria-label="GitHub" size="xl" />
-          </Link>
-          <a href="mailto:keerthivasansa@outlook.com">
-            keerthivasansa@outlook.com
-          </a>
-        </footer>
       </div>
     </main>
   );

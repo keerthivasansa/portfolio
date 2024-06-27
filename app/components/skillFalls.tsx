@@ -32,13 +32,13 @@ export function SkillFall({ active }: { active: boolean }) {
   }
 
   function spawnObjects() {
-    for (let i = 0; i < 10; i++) addSkill();
+    for (let i = 0; i < 20; i++) addSkill();
   }
 
   function setActive() {
     if (timer) return;
     spawnObjects();
-    const timerId = setInterval(spawnObjects, 800);
+    const timerId = setInterval(spawnObjects, 150);
     setTimer(timerId);
   }
 
