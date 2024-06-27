@@ -3,6 +3,7 @@ import { Fira_Code } from "next/font/google";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import AnimatePresence from "./components/animatePresence";
 config.autoAddCss = false;
 
 const fira = Fira_Code({ subsets: ["latin"] });
@@ -20,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fira.className + " bg-deepSlate text-white"}>
-        {children}
+        <AnimatePresence>{children}</AnimatePresence>
       </body>
     </html>
   );
