@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import { capitalize } from "../utils";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
@@ -45,6 +46,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             <a href={link.url} target="_blank" key={link.name}>
               <FontAwesomeIcon
                 icon={link.name === "github" ? faGithub : faLink}
+                aria-label={capitalize(link.name)}
                 size={"xl"}
               />
             </a>

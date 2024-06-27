@@ -61,10 +61,10 @@ export default function Dashboard() {
         </FadeIn>
         <footer className="flex flex-row gap-8 items-center">
           <Link href="https://linkedin.com/in/keerthivasansa">
-            <FontAwesomeIcon icon={faLinkedin} size="xl" />
+            <FontAwesomeIcon icon={faLinkedin} aria-label="LinkedIn" size="xl" />
           </Link>
           <Link href="https://github.com/keerthivasansa">
-            <FontAwesomeIcon icon={faGithub} size="xl" />
+            <FontAwesomeIcon icon={faGithub} aria-label="GitHub" size="xl" />
           </Link>
           <a href="mailto:keerthivasansa@outlook.com">
             keerthivasansa@outlook.com
