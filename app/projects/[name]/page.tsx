@@ -1,7 +1,6 @@
 "use client";
 import ProjectCard from "@/app/components/projectCard";
-import { projectData, projectMap } from "@/app/data/projects";
-import { useSearchParams } from "next/navigation";
+import { projectMap } from "@/app/data/projects";
 
 interface ProjectPageProps {
   params: {

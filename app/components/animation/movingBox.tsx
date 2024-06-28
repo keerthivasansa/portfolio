@@ -1,10 +1,14 @@
-import { getRandValue } from "@/app/utils";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function MovingBox() {
+  const [hover, setHover] = useState(false);
+
   return (
-    <div>
+    <div
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
       <div
         className="w-32 h-32 rounded-lg absolute bottom-40 right-52"
         style={{
@@ -15,16 +19,22 @@ export default function MovingBox() {
       ></div>
       <motion.div
         intial="over"
-        animate="move"
+        animate={hover ? "moveHover" : "move"}
         className="bg-accent w-32 h-32 rounded-lg z-10 bottom-40 right-52 absolute"
         variants={{
           over: {
             x: 0,
             y: 0,
+            scale: 1,
           },
           move: {
+            x: -25,
+            y: 25,
+          },
+          moveHover: {
             x: -50,
             y: 50,
+            scale: 1.2
           },
           transition: {
             duration: 0.25,
