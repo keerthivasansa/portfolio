@@ -7,8 +7,10 @@ import { HighlightText as Ht } from "./components/highlightText";
 import { useState } from "react";
 import { Ribbon } from "./components/Ribbon";
 import { SkillFall } from "./components/skillFalls";
+import { motion } from "framer-motion";
 import FadeIn from "./components/animation/fadeIn";
 import SlideIn from "./components/animation/slideIn";
+import MovingBox from "./components/animation/movingBox";
 
 export default function Dashboard() {
   const [ribbonActive, setRibbonActive] = useState(false);
@@ -41,6 +43,9 @@ export default function Dashboard() {
             Software Engineer . Full Stack . DevOps
           </p>
         </FadeIn>
+      </div>
+      <div>
+        <MovingBox />
       </div>
       <div className="pl-12 py-8 absolute bottom-12 left-12">
         <FadeIn delay={200}>
