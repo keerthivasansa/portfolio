@@ -17,7 +17,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   return (
     <main>
       <h1 className="text-3xl font-bold p-12 px-14">Projects | {index}</h1>
-      <ProjectCard project={project} />
+      <ProjectCard project={project} index={index} />
     </main>
   );
 }

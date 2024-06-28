@@ -8,7 +8,12 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { capitalize } from "../utils";
 import FadeIn from "./animation/fadeIn";
 
-export default function ProjectCard({ project }: { project: Project }) {
+interface ProjectCardProps {
+  project: Project;
+  index: number;
+}
+
+export default function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <div className="px-14 flex gap-24">
       <div className="flex flex-col">
