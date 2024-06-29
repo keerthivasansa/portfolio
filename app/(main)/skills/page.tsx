@@ -1,4 +1,4 @@
-import { SkillChip } from "../components/skill";
+import { SkillChip } from "@/app/components/skill";
 
 function SkillsPage() {
   const professional = [
@@ -15,7 +15,7 @@ function SkillsPage() {
     "APIs",
     "AWS",
     "Javascript",
-    "Git"
+    "Git",
   ];
 
   const personal = [
@@ -30,9 +30,8 @@ function SkillsPage() {
   ];
 
   return (
-    <div className="px-14 py-12">
-      <h1 className="text-4xl font-bold">Skills</h1>
-      <div className="my-14">
+    <div className="px-14 my-20">
+      <div>
         <h5 className="text-xl font-semibold">Professional Experience</h5>
         <p className="text-md my-2 opacity-85">
           Used in internships, freelance - Tested Production Grade Code.
