@@ -52,30 +52,32 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             {project.links.map((link) => (
               <a href={link.url} target="_blank" key={link.name}>
                 <FontAwesomeIcon
-                  icon={link.name === "github" ? faGithub : faArrowUpRightFromSquare}
+                  icon={
+                    link.name === "github" ? faGithub : faArrowUpRightFromSquare
+                  }
                   aria-label={capitalize(link.name)}
                   size={"xl"}
                 />
               </a>
             ))}
           </div>
-          <div className="mt-16 flex gap-6">
-            <button
-              onClick={() => navigateProject(1)}
-              className="bg-slate-200 text-black font-semibold px-6 py-3 rounded-lg"
-            >
-              <FontAwesomeIcon icon={faArrowLeft} size="lg" />
-              <span className="ml-4">Prev</span>
-            </button>
-            <button
-              onClick={() => navigateProject(-1)}
-              className="bg-slate-200 text-black font-semibold px-6 py-3 rounded-lg"
-            >
-              <span className="mr-4">Next</span>
-              <FontAwesomeIcon icon={faArrowRight} size="lg" />
-            </button>
-          </div>
         </FadeIn>
+        <div className="mt-16 flex gap-6">
+          <button
+            onClick={() => navigateProject(1)}
+            className="bg-slate-200 text-black font-semibold px-6 py-3 rounded-lg"
+          >
+            <FontAwesomeIcon icon={faArrowLeft} size="lg" />
+            <span className="ml-4">Prev</span>
+          </button>
+          <button
+            onClick={() => navigateProject(-1)}
+            className="bg-slate-200 text-black font-semibold px-6 py-3 rounded-lg"
+          >
+            <span className="mr-4">Next</span>
+            <FontAwesomeIcon icon={faArrowRight} size="lg" />
+          </button>
+        </div>
       </div>
       <div>
         <FadeIn delay={150}>

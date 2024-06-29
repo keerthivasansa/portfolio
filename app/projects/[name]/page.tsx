@@ -1,11 +1,19 @@
-"use client";
 import ProjectCard from "@/app/components/projectCard";
-import { projectMap } from "@/app/data/projects";
+import { projectData, projectMap } from "@/app/data/projects";
 
 interface ProjectPageProps {
   params: {
     name: string;
   };
+}
+
+export function generateStaticParams() {
+  const names = projectData.map((project) => {
+    return {
+      name: project.name.toLowerCase(),
+    };
+  });
+  return names;
 }
 
 export default function ProjectPage({ params }: ProjectPageProps) {
