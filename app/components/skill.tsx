@@ -15,6 +15,6 @@ export function SkillChip({ name }: { name: string }) {
       {name}
     </span>
   ) : (
-    <p>Missing skill</p>
+    <p>Missing {name}</p>
   );
 }

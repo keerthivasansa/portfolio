@@ -63,6 +63,27 @@ export const skills: Record<string, Skill> = {
     'MySQL': {
         color: '#ADEBFF'
     },
+    'Svelte': {
+        color: 'rgb(255, 184, 91)'
+    },
+    'ElectronJS': {
+        color: 'rgb(10, 0, 62)',
+        dark: true,
+    },
+    'Web Scraping': {
+        color: 'rgb(76, 230, 143)'
+    },
+    'Load Balancing': {
+        color: "rgb(9, 104, 155)",
+        dark: true
+    },
+    "System Design": {
+        color: "rgb(19, 67, 37)",
+        dark: true,
+    },
+    "Networking": {
+        color: "rgb(255, 162, 162)"
+    }
 }
 
 export const allSkills = Object.keys(skills);

@@ -15,7 +15,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const { project, index } = projectMap[name];
   return (
     <main>
-      <h1 className="text-3xl font-bold p-12 px-14">Projects | {index}</h1>
+      <h1 className="text-3xl font-bold p-12 px-14">Projects</h1>
       <ProjectCard project={project} index={index} />
     </main>
   );

@@ -19,12 +19,30 @@ export const projectData: Project[] = [
                 url: "https://cohesive.so"
             }
         ],
+    },
+    {
+        name: "Animos",
+        skills: ['Svelte', 'APIs', 'Web Scraping', 'Typescript', 'ElectronJS', 'Git', 'Load Balancing', 'System Design', 'Networking'],
+        description: 'on-demand anime streaming application',
+        highlights: [
+            'Downloaded 10,000+ more times on its release month',
+            'Received a 5 star rating for the desktop app from Softepedia.org',
+            'Rated 200+ stars on Github',
+            'Uses two levels of local and server caching with Redis, SQLite reducing load times from 150ms to sub 3ms',
+        ],
+        image: "/images/animos.webp",
+        links: [
+            {
+                name: "github",
+                url: "https://github.com/keerthivasansa/animos"
+            }
+        ]
     }
 ]
 
 export const projectMap: Record<string, { project: Project, index: number }> = {};
 
-projectData.forEach((pr, index) =>  {
+projectData.forEach((pr, index) => {
     projectMap[pr.name.toLowerCase()] = {
         project: pr,
         index,
