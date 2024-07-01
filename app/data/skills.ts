@@ -36,6 +36,7 @@ export const skills: Record<string, Skill> = {
     },
     'Java': {
         color: '#4E2100',
+        dark: true
     },
     'Docker': {
         color: '#61C6FF',
@@ -83,6 +84,26 @@ export const skills: Record<string, Skill> = {
     },
     "Networking": {
         color: "rgb(255, 162, 162)"
+    },
+    "TailwindCSS": {
+        color: "rgb(94, 165, 240)",
+    },
+    "Tensorflow": {
+        color: "rgb(226, 160, 160)"
+    },
+    "MongoDB": {
+        color: "rgb(0, 51, 7)",
+        dark: true
+    },
+    "Kotlin": {
+        color: "rgb(42, 20, 90)",
+        dark: true,
+    },
+    "Spring Boot": {
+        color: "rgb(255, 231, 137)",
+    },
+    "Rust": {
+        color: 'rgb(255, 184, 91)'
     }
 }
 

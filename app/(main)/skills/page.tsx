@@ -26,11 +26,11 @@ function SkillsPage() {
     "Java",
     "Spring Boot",
     "Kotlin",
-    "Mobile Dev",
+    "Rust",
   ];
 
   return (
-    <div className="px-14 my-20">
+    <div className="px-14 my-12 lg:my-20">
       <div>
         <h5 className="text-xl font-semibold">Professional Experience</h5>
         <p className="text-md my-2 opacity-85">
@@ -42,10 +42,10 @@ function SkillsPage() {
           ))}
         </div>
       </div>
-      <div className="my-40">
+      <div className="my-20 lg:my-40">
         <h5 className="text-xl font-semibold">Project Experience</h5>
         <p className="text-md my-2 opacity-85">Used in personal projects</p>
-        <div className="flex flex-row gap-4 my-6">
+        <div className="flex flex-row flex-wrap gap-4 my-6">
           {personal.map((skill) => (
             <SkillChip name={skill} key={skill} />
           ))}
