@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import MobileNav from "./nav/mobileNav";
 import DesktopNav from "./nav/desktopNav";
 
@@ -22,9 +22,14 @@ export default function NavBar() {
     },
   ];
 
-  return window.screen.width < 620 ? (
-    <MobileNav routes={routes} />
-  ) : (
-    <DesktopNav routes={routes} />
+  return (
+    <>
+      <div className="tablet:hidden">
+        <MobileNav routes={routes} />
+      </div>
+      <div className="hidden tablet:block">
+        <DesktopNav routes={routes} />
+      </div>
+    </>
   );
 }
