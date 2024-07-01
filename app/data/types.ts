@@ -13,3 +13,11 @@ interface Link {
     name: string;
     url: string;
 }
+
+export interface Experience {
+    company: string;
+    role: string;
+    keyPoints: string[];
+    skills: string[];
+    logo: string;
+}

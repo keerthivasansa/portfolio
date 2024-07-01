@@ -49,34 +49,47 @@ export default function NavBar() {
   useEffect(getActiveSegment, [pathname]);
 
   return (
-    <div className="px-14 my-10 h-8 flex items-end font-semibold">
-      {routes.map((rt) => (
-        <div key={rt.name}>
-          <motion.span
-            initial="inactive"
-            className="mr-8 cursor-pointer"
-            onMouseEnter={() => setHover(rt.name.toLowerCase())}
-            onMouseLeave={() => setHover("")}
-            animate={getAnimationVariant(rt.name)}
-            variants={{
-              inactive: {
-                color: "rgba(255, 255, 255, 0.7)",
-                fontSize: "1rem",
-              },
-              active: {
-                color: "rgba(255, 255, 255, 1)",
-                fontSize: "1.5rem",
-              },
-              hover: {
-                color: "rgba(255, 255, 255, 0.85)",
-                fontSize: "1.15rem",
-              },
-            }}
-          >
-            <Link href={`/${rt.name.toLowerCase()}`}>{rt.name}</Link>
-          </motion.span>
-        </div>
-      ))}
+    <div className="pl-10 pr-8 my-10 flex justify-between">
+      <div className="h-8 flex align-bottom items-end font-semibold">
+        {routes.map((rt) => (
+          <div key={rt.name}>
+            <motion.span
+              initial="inactive"
+              className="mr-8 cursor-pointer"
+              onMouseEnter={() => setHover(rt.name.toLowerCase())}
+              onMouseLeave={() => setHover("")}
+              animate={getAnimationVariant(rt.name)}
+              variants={{
+                inactive: {
+                  color: "rgba(255, 255, 255, 0.7)",
+                  fontSize: "1rem",
+                },
+                active: {
+                  color: "rgba(255, 255, 255, 1)",
+                  fontSize: "1.5rem",
+                },
+                hover: {
+                  color: "rgba(255, 255, 255, 0.85)",
+                  fontSize: "1.15rem",
+                },
+              }}
+            >
+              <Link href={`/${rt.name.toLowerCase()}`}>{rt.name}</Link>
+            </motion.span>
+          </div>
+        ))}
+      </div>
+      <Link
+        href="https://storage.keerthivasan.tech/Keerthi%20Vasan%20S%20A%20-%20SWE%20-%20Resume.pdf"
+        target="_blank"
+      >
+        <button
+          style={{ backgroundColor: "rgb(198, 248, 177)" }}
+          className="text-base text-black font-semibold px-4 py-2 rounded-lg"
+        >
+          Resume
+        </button>
+      </Link>
     </div>
   );
 }
