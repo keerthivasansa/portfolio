@@ -8,3 +8,11 @@ export function capitalize(str: string) {
         return str;
     return str[0].toUpperCase() + str.slice(1);
 }
+
+export function disableOverflow() {
+    document.body.style.overflow = "hidden";
+}
+
+export function enableOverflow() {
+    document.body.style.overflowX = "auto";
+}
