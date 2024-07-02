@@ -30,7 +30,7 @@ function SkillsPage() {
   ];
 
   return (
-    <div className="px-14 my-12 lg:my-20">
+    <div className="my-12 lg:my-20">
       <div>
         <h5 className="text-xl font-semibold">Professional Experience</h5>
         <p className="text-md my-2 opacity-85">

@@ -31,7 +31,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   }
 
   return (
-    <div className="px-14 flex gap-24">
+    <div className="flex gap-24">
       <div className="flex flex-col">
         <FadeIn delay={50}>
           <div className="w-[45vw] aspect-video relative max-w-[50rem]">
