@@ -52,7 +52,7 @@ export function SkillFall({ active }: { active: boolean }) {
   }, [active, timer]);
 
   return (
-    <>
+    <div className="overflow-hidden w-screen h-screen absolute top-0 left-0">
       {curr.map((sk) => (
         <FloatingSkill
           key={sk.id}
@@ -60,6 +60,6 @@ export function SkillFall({ active }: { active: boolean }) {
           skillName={sk.name}
         />
       ))}
-    </>
+    </div>
   );
 }
