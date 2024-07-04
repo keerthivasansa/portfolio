@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import FadeIn from "../animation/fadeIn";
 import { usePathname } from "next/navigation";
+import { HighlightText } from "../highlightText";
 
 function MobileNav({ routes }: NavProps) {
   const [expanded, setExpanded] = useState(false);
@@ -12,18 +13,20 @@ function MobileNav({ routes }: NavProps) {
   useEffect(() => setExpanded(false), [pathname]);
 
   return (
-    <>
-      <div className="w-full pt-6 flex justify-between items-center px-6 py-4">
+    <div className="sticky top-0 left-0 z-[999]">
+      <div className="sticky w-full pt-6 flex justify-between items-center px-6 py-4">
         <FontAwesomeIcon
           icon={faBars}
           size="lg"
           onClick={() => setExpanded(true)}
         />
-        <p className="text-2xl">KV</p>
+        <p className="text-2xl font-semibold tracking-wider">
+          K<HighlightText>V</HighlightText>
+        </p>
         <div className="opacity-0">.</div>
       </div>
       {expanded && (
-        <div className="z-[100] opacity-95 bg-black w-screen h-screen absolute top-0 left-0">
+        <div className="opacity-90 bg-black w-screen h-screen absolute top-0 left-0">
           <FadeIn delay={50}>
             <FontAwesomeIcon
               onClick={() => setExpanded(false)}
@@ -41,7 +44,7 @@ function MobileNav({ routes }: NavProps) {
           </FadeIn>
         </div>
       )}
-    </>
+    </div>
   );
 }
 

@@ -1,9 +1,8 @@
-import MovingBox from "@/app/components/animation/movingBox";
 import Image from "next/image";
 
 function AboutPage() {
   return (
-    <div className="flex flex-col gap-24">
+    <div className="flex flex-col lg:flex-row gap-24 z-10">
       <div className="w-fit m-auto">
         <div className="relative w-40 h-40">
           <Image
