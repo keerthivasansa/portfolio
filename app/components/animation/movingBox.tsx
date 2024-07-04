@@ -10,7 +10,7 @@ export default function MovingBox() {
       onMouseLeave={() => setHover(false)}
     >
       <div
-        className="w-32 h-32 rounded-lg absolute bottom-40 right-52"
+        className="w-14 h-14 lg:w-32 lg:h-32 rounded-lg absolute bottom-52 right-12 lg:bottom-40 lg:right-52"
         style={{
           backgroundImage:
             "linear-gradient(135deg, #66ff6c 25%, transparent 25%, transparent 50%, #66ff6c 50%, #66ff6c 75%, transparent 75%, transparent 100%)",
@@ -20,7 +20,7 @@ export default function MovingBox() {
       <motion.div
         intial="over"
         animate={hover ? "moveHover" : "move"}
-        className="bg-accent w-32 h-32 rounded-lg z-10 bottom-40 right-52 absolute"
+        className="bg-accent w-14 h-14 lg:w-32 lg:h-32 rounded-lg z-10 bottom-52 right-12 lg:bottom-40 lg:right-52 absolute"
         variants={{
           over: {
             x: 0,

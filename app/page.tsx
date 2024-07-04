@@ -30,7 +30,7 @@ export default function Dashboard() {
             <Ribbon />
           </SlideIn>
         </div>
-        <div className="max-lg:mt-12 lg:absolute top-40 right-40">
+        <div className="mt-6 lg:mt-12 lg:absolute top-40 right-40">
           <FadeIn delay={25}>
             <h1 className="text-4xl phone:text-5xl tablet:text-7xl font-bold">
               <p>
@@ -49,9 +49,9 @@ export default function Dashboard() {
         <div>
           <MovingBox />
         </div>
-        <div className="lg:pl-12 py-8 lg:absolute bottom-12 left-12">
+        <div className="mt-10 lg:pl-12 py-8 lg:absolute bottom-12 left-12">
           <FadeIn delay={25}>
-            <section className="flex flex-col justify-start gap-8 mb-24 text-lg">
+            <section className="flex flex-col justify-start gap-8 mb-24 text-base lg:text-lg">
               <HoverLink href="/skills">Skills</HoverLink>
               <HoverLink
                 href={`/projects/${firstProject.name.toLowerCase()}`}

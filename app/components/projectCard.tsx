@@ -93,7 +93,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             <span className="font-semibold mt-14 mb-6 lg:mt-48 block">
               Key Highlights:
             </span>
-            <ul className="list-disc gap-3">
+            <ul className="gap-3">
               {project.highlights.map((hl, index) => (
                 <li key={index} className="mb-8">
                   {hl}
