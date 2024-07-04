@@ -10,6 +10,7 @@ import { SkillFall } from "./components/skillFalls";
 import FadeIn from "./components/animation/fadeIn";
 import SlideIn from "./components/animation/slideIn";
 import MovingBox from "./components/animation/movingBox";
+import { firstProject } from "./data/projects";
 
 export default function Dashboard() {
   const [ribbonActive, setRibbonActive] = useState(false);
@@ -25,12 +26,12 @@ export default function Dashboard() {
             ribbonActive ? "translate-y-0" : "-translate-y-6 lg:-translate-y-14"
           }`}
         >
-          <SlideIn delay={200} direction="top">
+          <SlideIn delay={50} direction="top">
             <Ribbon />
           </SlideIn>
         </div>
         <div className="max-lg:mt-12 lg:absolute top-40 right-40">
-          <FadeIn delay={150}>
+          <FadeIn delay={25}>
             <h1 className="text-4xl phone:text-5xl tablet:text-7xl font-bold">
               <p>
                 <Ht>K</Ht>eerthi
@@ -49,18 +50,21 @@ export default function Dashboard() {
           <MovingBox />
         </div>
         <div className="lg:pl-12 py-8 lg:absolute bottom-12 left-12">
-          <FadeIn delay={200}>
+          <FadeIn delay={25}>
             <section className="flex flex-col justify-start gap-8 mb-24 text-lg">
               <HoverLink href="/skills">Skills</HoverLink>
-              <HoverLink href="/projects" switchColor>
+              <HoverLink
+                href={`/projects/${firstProject.name.toLowerCase()}`}
+                switchColor
+              >
                 Projects
               </HoverLink>
               <HoverLink href="/experience">Experience</HoverLink>
               <HoverLink href="/about" switchColor>
                 About
               </HoverLink>
-              <HoverLink href="contact">Contact</HoverLink>
-              <HoverLink href="skills" switchColor>
+              <HoverLink href="/contact">Contact</HoverLink>
+              <HoverLink href="https://www.linkedin.com/in/keerthivasansa" switchColor>
                 Let&apos;s Connect
               </HoverLink>
             </section>

@@ -42,6 +42,8 @@ export const projectData: Project[] = [
 
 export const projectMap: Record<string, { project: Project, index: number }> = {};
 
+export const firstProject = projectData[0];
+
 projectData.forEach((pr, index) => {
     projectMap[pr.name.toLowerCase()] = {
         project: pr,

@@ -33,7 +33,7 @@ function MobileNav({ routes }: NavProps) {
             />
             <div className="p-12 pt-24 text-lg flex flex-col gap-8">
               {routes.map((rt) => (
-                <Link key={rt.name} href={`/${rt.name.toLowerCase()}`}>
+                <Link key={rt.name} href={rt.link}>
                   {rt.name}
                 </Link>
               ))}

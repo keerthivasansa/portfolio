@@ -31,10 +31,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   }
 
   return (
-    <div className="flex gap-24">
+    <div className="flex gap-12 lg:gap-24 flex-col lg:flex-row ">
       <div className="flex flex-col">
-        <FadeIn delay={50}>
-          <div className="w-[45vw] aspect-video relative max-w-[50rem]">
+        <FadeIn delay={0}>
+          <div className="w-full lg:w-[45vw] aspect-video relative max-w-[50rem]">
             <Image
               src={project.image}
               alt={project.name}
@@ -62,17 +62,17 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             ))}
           </div>
         </FadeIn>
-        <div className="mt-16 flex gap-6">
+        <div className="mt-16 z-10 w-full flex fixed lg:block left-0 bottom-0">
           <button
             onClick={() => navigateProject(1)}
-            className="bg-slate-200 text-black font-semibold px-6 py-3 rounded-lg"
+            className="w-full bg-slate-200 text-black border-2 border-black font-semibold px-6 py-3 lg:rounded-lg lg:rounded-0"
           >
             <FontAwesomeIcon icon={faArrowLeft} size="lg" />
             <span className="ml-4">Prev</span>
           </button>
           <button
             onClick={() => navigateProject(-1)}
-            className="bg-slate-200 text-black font-semibold px-6 py-3 rounded-lg"
+            className="w-full flex-grow bg-slate-200 text-black border-2 border-black lg:border-0 font-semibold px-6 py-3 lg:rounded-lg"
           >
             <span className="mr-4">Next</span>
             <FontAwesomeIcon icon={faArrowRight} size="lg" />
@@ -80,7 +80,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
       </div>
       <div>
-        <FadeIn delay={150}>
+        <FadeIn delay={0}>
           <span className="font-semibold mb-8 block">Skills used: </span>
           <div className="flex flex-row gap-4 flex-wrap">
             {project.skills.map((sk) => (
@@ -88,17 +88,19 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             ))}
           </div>
         </FadeIn>
-        <FadeIn delay={150}>
-          <span className="font-semibold mb-8 mt-48 block">
-            Key Highlights:
-          </span>
-          <ul className="list-disc gap-3">
-            {project.highlights.map((hl, index) => (
-              <li key={index} className="mb-8">
-                {hl}
-              </li>
-            ))}
-          </ul>
+        <FadeIn delay={0}>
+          <div className="mb-24 lg:mb-0">
+            <span className="font-semibold mt-14 mb-6 lg:mt-48 block">
+              Key Highlights:
+            </span>
+            <ul className="list-disc gap-3">
+              {project.highlights.map((hl, index) => (
+                <li key={index} className="mb-8">
+                  {hl}
+                </li>
+              ))}
+            </ul>
+          </div>
         </FadeIn>
       </div>
     </div>

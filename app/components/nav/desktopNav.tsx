@@ -1,5 +1,7 @@
 "use client";
 import { projectMap } from "@/app/data/projects";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,6 +10,7 @@ import { useEffect, useState } from "react";
 export interface NavProps {
   routes: {
     name: string;
+    link: string;
   }[];
 }
 
@@ -61,7 +64,7 @@ function DesktopNav({ routes }: NavProps) {
                 },
               }}
             >
-              <Link href={`/${rt.name.toLowerCase()}`}>{rt.name}</Link>
+              <Link href={rt.link}>{rt.name}</Link>
             </motion.span>
           </div>
         ))}
@@ -70,10 +73,7 @@ function DesktopNav({ routes }: NavProps) {
         href="https://storage.keerthivasan.tech/Keerthi%20Vasan%20S%20A%20-%20SWE%20-%20Resume.pdf"
         target="_blank"
       >
-        <button
-          style={{ backgroundColor: "rgb(198, 248, 177)" }}
-          className="text-base text-black font-semibold px-4 py-2 rounded-lg"
-        >
+        <button className="bg-accent text-base text-black font-semibold px-4 py-2 rounded-lg">
           Resume
         </button>
       </Link>

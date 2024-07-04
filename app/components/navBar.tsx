@@ -1,24 +1,33 @@
 "use client";
 import MobileNav from "./nav/mobileNav";
 import DesktopNav from "./nav/desktopNav";
+import { firstProject } from "../data/projects";
 
 export default function NavBar() {
   const routes = [
     {
+      name: "Home",
+      link: "/"
+    },
+    {
       name: "Skills",
+      link: "/skills"
     },
     {
       name: "Projects",
-      sub: 4,
+      link: `/projects/${firstProject.name.toLowerCase()}`
     },
     {
       name: "Experience",
+      link: "/experience"
     },
     {
       name: "About",
+      link: "/about",
     },
     {
       name: "Contact",
+      link: "/contact"
     },
   ];
 
