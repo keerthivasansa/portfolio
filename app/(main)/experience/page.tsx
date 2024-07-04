@@ -3,7 +3,7 @@ import { experiences } from "@/app/data/experience";
 
 export default function ExpPage() {
   return (
-    <main className="ml-4 lg:ml-24 lg:w-fit mt-20">
+    <main className="lg:ml-24 lg:w-fit mt-20">
       {experiences.map((exp, index) => (
         <ExperienceCard
           key={index}

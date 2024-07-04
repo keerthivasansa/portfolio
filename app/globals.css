@@ -11,3 +11,8 @@ body {
     margin: 0 auto;
     min-height: 100vh;
 }
+
+li::before {
+    content: "\2022"; /* Custom bullet point (Unicode for a solid circle) */
+    margin-right: 0.5em;  /* Add spacing between bullet point and text */
+}
