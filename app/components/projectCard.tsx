@@ -62,7 +62,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             ))}
           </div>
         </FadeIn>
-        <div className="mt-16 z-10 w-full flex fixed lg:block left-0 bottom-0">
+        <div className="mt-16 z-10 w-full flex lg:flex-row fixed lg:relative lg:gap-12 lg:max-w-sm left-0 bottom-0">
           <button
             onClick={() => navigateProject(1)}
             className="w-full bg-slate-200 text-black border-2 border-black font-semibold px-6 py-3 lg:rounded-lg lg:rounded-0"

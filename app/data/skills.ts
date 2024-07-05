@@ -104,6 +104,16 @@ export const skills: Record<string, Skill> = {
     },
     "Rust": {
         color: 'rgb(255, 184, 91)'
+    },
+    'DevOps': {
+        color: 'rgb(106, 26, 146)',
+        dark: true,
+    },
+    'LLM': {
+        color: 'rgb(153, 255, 200)'
+    },
+    'NodeJS': {
+        color: 'rgb(255, 210, 9)'
     }
 }
 

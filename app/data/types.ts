@@ -20,4 +20,5 @@ export interface Experience {
     keyPoints: string[];
     skills: string[];
     logo: string;
+    duration: string;
 }
