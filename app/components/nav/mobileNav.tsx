@@ -26,23 +26,32 @@ function MobileNav({ routes }: NavProps) {
         <div className="opacity-0">.</div>
       </div>
       {expanded && (
-        <div className="opacity-90 bg-black w-screen h-screen absolute top-0 left-0">
-          <FadeIn delay={50}>
-            <FontAwesomeIcon
-              onClick={() => setExpanded(false)}
-              icon={faClose}
-              size="xl"
-              className="absolute top-8 right-8"
-            />
-            <div className="p-12 pt-24 text-lg flex flex-col gap-8">
-              {routes.map((rt) => (
-                <Link key={rt.name} href={rt.link}>
-                  {rt.name}
-                </Link>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
+        <>
+          <div className="opacity-95 bg-black w-screen h-screen absolute top-0 left-0">
+            <FadeIn delay={50}>
+              <div className="flex flex-col h-screen py-10 justify-between">
+                <FontAwesomeIcon
+                  onClick={() => setExpanded(false)}
+                  icon={faClose}
+                  size="xl"
+                  className="absolute top-8 right-8"
+                />
+                <div className="p-12 pt-24 text-lg flex flex-col gap-8">
+                  {routes.map((rt) => (
+                    <Link key={rt.name} href={rt.link}>
+                      {rt.name}
+                    </Link>
+                  ))}
+                </div>
+                <div className="w-full px-12">
+                  <button className="bg-accent w-full opacity-100 text-base py-3 text-black font-semibold rounded-lg">
+                    Resume
+                  </button>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </>
       )}
     </div>
   );

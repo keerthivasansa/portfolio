@@ -70,7 +70,7 @@ function DesktopNav({ routes }: NavProps) {
         ))}
       </div>
       <Link
-        href="https://storage.keerthivasan.tech/Keerthi%20Vasan%20S%20A%20-%20SWE%20-%20Resume.pdf"
+        href="https://storage.keerthivasan.tech/Keerthi_Vasan_S_A%20-%20SWE%20-%20July_2024.pdf"
         target="_blank"
       >
         <button className="bg-accent text-base text-black font-semibold px-4 py-2 rounded-lg">

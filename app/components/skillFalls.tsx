@@ -52,7 +52,7 @@ export function SkillFall({ active }: { active: boolean }) {
   }, [active, timer]);
 
   return (
-    <div className="">
+    <div className="overflow-hidden w-screen z-[999] pointer-events-none h-screen absolute top-0 left-0">
       {curr.map((sk) => (
         <FloatingSkill
           key={sk.id}

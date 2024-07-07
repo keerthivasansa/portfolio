@@ -16,8 +16,8 @@ export default function Dashboard() {
   const [ribbonActive, setRibbonActive] = useState(false);
   return (
     <>
-      <SkillFall active={ribbonActive} />
-      <main className="p-12 overflow-hidden">
+      <main className="p-12 overflow-x-hidden">
+        <SkillFall active={ribbonActive} />
         <div
           onMouseEnter={() => setRibbonActive(true)}
           onMouseLeave={() => setRibbonActive(false)}
@@ -60,11 +60,20 @@ export default function Dashboard() {
                 Projects
               </HoverLink>
               <HoverLink href="/experience">Experience</HoverLink>
+              <HoverLink
+                href="https://storage.keerthivasan.tech/Keerthi_Vasan_S_A%20-%20SWE%20-%20July_2024.pdf"
+                switchColor
+              >
+                Resume
+              </HoverLink>
               <HoverLink href="/about" switchColor>
                 About
               </HoverLink>
               <HoverLink href="/contact">Contact</HoverLink>
-              <HoverLink href="https://www.linkedin.com/in/keerthivasansa" switchColor>
+              <HoverLink
+                href="https://www.linkedin.com/in/keerthivasansa"
+                switchColor
+              >
                 Let&apos;s Connect
               </HoverLink>
             </section>
@@ -87,6 +96,12 @@ export default function Dashboard() {
                 keerthivasansa@outlook.com
               </a>
             </footer>
+          </FadeIn>
+
+          <FadeIn delay={100}>
+            <small className="mt-5 block opacity-70 text-white">
+              Pull the top ribbon for a surprise
+            </small>
           </FadeIn>
         </div>
       </main>
