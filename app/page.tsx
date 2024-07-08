@@ -61,7 +61,7 @@ export default function Dashboard() {
               </HoverLink>
               <HoverLink href="/experience">Experience</HoverLink>
               <HoverLink
-                href="https://storage.keerthivasan.tech/Keerthi_Vasan_S_A%20-%20SWE%20-%20July_2024.pdf"
+                href="https://storage.keerthivasan.tech/Keerthi_Vasan_S_A___SWE___July_2024.pdf"
                 switchColor
               >
                 Resume
