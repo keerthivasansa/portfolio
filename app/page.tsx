@@ -11,11 +11,13 @@ import FadeIn from "./components/animation/fadeIn";
 import SlideIn from "./components/animation/slideIn";
 import MovingBox from "./components/animation/movingBox";
 import { firstProject } from "./data/projects";
+import GlassyStars from "./components/glassyStars";
 
 export default function Dashboard() {
   const [ribbonActive, setRibbonActive] = useState(false);
   return (
     <>
+      <GlassyStars />
       <main className="p-12 overflow-x-hidden">
         <SkillFall active={ribbonActive} />
         <div
