@@ -10,10 +10,16 @@ import { HighlightText } from "../highlightText";
 function MobileNav({ routes }: NavProps) {
   const [expanded, setExpanded] = useState(false);
   const pathname = usePathname();
+  useEffect(() => {
+    if (expanded)
+      document.body.style.overflowY = "hidden";
+    else
+      document.body.style.overflowY = "auto";
+  }, [expanded])
   useEffect(() => setExpanded(false), [pathname]);
 
   return (
-    <div className="sticky top-0 left-0 z-[999]">
+    <div className="sticky top-0 left-0 z-[1000]">
       <div className="sticky w-full pt-6 flex justify-between items-center px-6 py-4">
         <FontAwesomeIcon
           icon={faBars}
