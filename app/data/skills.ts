@@ -117,4 +117,12 @@ export const skills: Record<string, Skill> = {
     }
 }
 
+
 export const allSkills = Object.keys(skills);
+
+const res: any[] = [];
+allSkills.map(sk => {
+    res.push({ id: sk, color: skills[sk].color, dark: !!skills[sk].dark })
+})
+
+console.log(JSON.stringify(res));

@@ -1,6 +1,23 @@
+'use client';
 import { SkillChip } from "@/app/components/skill";
+import { gql } from "@/lib/gql";
+import { useQuery } from "@apollo/client";
+import { useEffect } from "react";
+
+const GET_SKILLS = gql(
+  `query GetSkills {
+    Skills {
+      id
+      color,
+      dark
+    }
+  }
+`
+);
 
 function SkillsPage() {
+  const { data: skills, loading } = useQuery(GET_SKILLS);
+
   const professional = [
     "React",
     "NextJS",
@@ -28,6 +45,8 @@ function SkillsPage() {
     "Kotlin",
     "Rust",
   ];
+
+  useEffect(() => console.log(skills), [skills])
 
   return (
     <div className="my-12 lg:my-20">
