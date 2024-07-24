@@ -1,40 +1,38 @@
-import { gql } from "@apollo/client";
-import createApolloClient from "@/lib/apollo";
-import { useEffect, useState } from "react";
+'use client';
+
+import { gql } from "@/lib/gql";
+import { useQuery } from "@apollo/client";
+import { useEffect } from "react";
+
+const GET_SKILL = gql(`
+query GetSkill($skName: String!) {
+	Skills(filter: {
+		id: {
+			_eq: $skName
+		}
+	}) {
+		color
+    dark
+	}
+}`);
 
 export function SkillChip({ name }: { name: string }) {
-  const [skill, setSkill] = useState("");
+  const { data: skill } = useQuery(GET_SKILL, {
+    variables: {
+      skName: name,
+    },
+  });
 
-  const client = createApolloClient();
-
-  async function getSkill() {
-    console.log("Fetching gql");
-    const { data, loading } = await client.query({
-      query: gql`
-        query {
-              Skills_id {
-                id
-                color
-                dark
-              }
-            }
-          }
-        }
-      `,
-    });
-    console.log({ loading, data });
-  }
-
-  useEffect(() => {
-    getSkill();
-  }, []);
-
-  return skill ? (
+  useEffect(() => {console.log(skill)}, [skill]);
+  if (!skill)
+      return <></>
+  const skData = skill.Skills[0]
+  return skData ? (
     <span
       style={{
-        border: `2px solid ${false ? "white" : "transparent"}`,
-        backgroundColor: "black",
-        color: false ? "white" : "black",
+        border: `2px solid ${skData.dark ? "white" : "transparent"}`,
+        backgroundColor: skData.color || "black",
+        color: skData.dark ? "white" : "black",
       }}
       className="px-6 py-2 rounded-lg font-semibold"
     >

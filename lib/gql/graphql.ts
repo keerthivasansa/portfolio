@@ -527,10 +527,18 @@ export type Version_Skills = {
   id: Scalars['ID']['output'];
 };
 
-export type GetSkillsQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetNestedProjectQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetSkillsQuery = { __typename?: 'Query', Skills: Array<{ __typename?: 'Skills', id: string, color?: string | null, dark?: boolean | null }> };
+export type GetNestedProjectQuery = { __typename?: 'Query', Projects: Array<{ __typename?: 'Projects', name?: string | null, thumbnail?: string | null, skills?: Array<{ __typename?: 'Projects_Skills_1', Skills_id?: { __typename?: 'Skills', color?: string | null, id: string } | null } | null> | null }> };
+
+export type GetSkillQueryVariables = Exact<{
+  skName: Scalars['String']['input'];
+}>;
 
 
-export const GetSkillsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetSkills"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Skills"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"color"}},{"kind":"Field","name":{"kind":"Name","value":"dark"}}]}}]}}]} as unknown as DocumentNode<GetSkillsQuery, GetSkillsQueryVariables>;
+export type GetSkillQuery = { __typename?: 'Query', Skills: Array<{ __typename?: 'Skills', color?: string | null, dark?: boolean | null }> };
+
+
+export const GetNestedProjectDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetNestedProject"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Projects"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"skills"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Skills_id"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"color"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"thumbnail"}}]}}]}}]} as unknown as DocumentNode<GetNestedProjectQuery, GetNestedProjectQueryVariables>;
+export const GetSkillDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetSkill"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"skName"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Skills"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"id"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"_eq"},"value":{"kind":"Variable","name":{"kind":"Name","value":"skName"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"color"}},{"kind":"Field","name":{"kind":"Name","value":"dark"}}]}}]}}]} as unknown as DocumentNode<GetSkillQuery, GetSkillQueryVariables>;

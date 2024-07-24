@@ -13,7 +13,8 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "query GetSkills {\n    Skills {\n      id\n      color,\n      dark\n    }\n  }\n": types.GetSkillsDocument,
+    "query GetNestedProject{\n    Projects {\n      name\n      skills {\n        Skills_id {\n          color\n          id\n        }\n      }\n      thumbnail\n    }\n  }\n": types.GetNestedProjectDocument,
+    "\nquery GetSkill($skName: String!) {\n\tSkills(filter: {\n\t\tid: {\n\t\t\t_eq: $skName\n\t\t}\n\t}) {\n\t\tcolor\n    dark\n\t}\n}": types.GetSkillDocument,
 };
 
 /**
@@ -33,7 +34,11 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "query GetSkills {\n    Skills {\n      id\n      color,\n      dark\n    }\n  }\n"): (typeof documents)["query GetSkills {\n    Skills {\n      id\n      color,\n      dark\n    }\n  }\n"];
+export function gql(source: "query GetNestedProject{\n    Projects {\n      name\n      skills {\n        Skills_id {\n          color\n          id\n        }\n      }\n      thumbnail\n    }\n  }\n"): (typeof documents)["query GetNestedProject{\n    Projects {\n      name\n      skills {\n        Skills_id {\n          color\n          id\n        }\n      }\n      thumbnail\n    }\n  }\n"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\nquery GetSkill($skName: String!) {\n\tSkills(filter: {\n\t\tid: {\n\t\t\t_eq: $skName\n\t\t}\n\t}) {\n\t\tcolor\n    dark\n\t}\n}"): (typeof documents)["\nquery GetSkill($skName: String!) {\n\tSkills(filter: {\n\t\tid: {\n\t\t\t_eq: $skName\n\t\t}\n\t}) {\n\t\tcolor\n    dark\n\t}\n}"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};
