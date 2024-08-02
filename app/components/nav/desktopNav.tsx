@@ -1,4 +1,5 @@
 "use client";
+import { RESUME_LINK } from "@/app/data/global";
 import { projectMap } from "@/app/data/projects";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -70,7 +71,7 @@ function DesktopNav({ routes }: NavProps) {
         ))}
       </div>
       <Link
-        href="https://storage.keerthivasan.tech/Keerthi_Vasan_S_A%20-%20SWE%20-%20July_2024.pdf"
+        href={RESUME_LINK}
         target="_blank"
       >
         <button className="bg-accent text-base text-black font-semibold px-4 py-2 rounded-lg">

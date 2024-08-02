@@ -12,6 +12,7 @@ import SlideIn from "./components/animation/slideIn";
 import MovingBox from "./components/animation/movingBox";
 import { firstProject } from "./data/projects";
 import GlassyStars from "./components/glassyStars";
+import { RESUME_LINK } from "./data/global";
 
 export default function Dashboard() {
   const [ribbonActive, setRibbonActive] = useState(false);
@@ -63,7 +64,7 @@ export default function Dashboard() {
               </HoverLink>
               <HoverLink href="/experience">Experience</HoverLink>
               <HoverLink
-                href="https://storage.keerthivasan.tech/Keerthi_Vasan_S_A___SWE___July_2024.pdf"
+                href={RESUME_LINK}
                 switchColor
               >
                 Resume

@@ -6,16 +6,15 @@ import { useEffect, useState } from "react";
 import FadeIn from "../animation/fadeIn";
 import { usePathname } from "next/navigation";
 import { HighlightText } from "../highlightText";
+import { RESUME_LINK } from "@/app/data/global";
 
 function MobileNav({ routes }: NavProps) {
   const [expanded, setExpanded] = useState(false);
   const pathname = usePathname();
   useEffect(() => {
-    if (expanded)
-      document.body.style.overflowY = "hidden";
-    else
-      document.body.style.overflowY = "auto";
-  }, [expanded])
+    if (expanded) document.body.style.overflowY = "hidden";
+    else document.body.style.overflowY = "auto";
+  }, [expanded]);
   useEffect(() => setExpanded(false), [pathname]);
 
   return (
@@ -35,7 +34,7 @@ function MobileNav({ routes }: NavProps) {
         <>
           <div className="opacity-95 bg-black w-screen h-screen absolute top-0 left-0">
             <FadeIn delay={50}>
-              <div className="flex flex-col h-screen py-10 justify-between">
+              <div className="flex flex-col h-dvh py-10 justify-between">
                 <FontAwesomeIcon
                   onClick={() => setExpanded(false)}
                   icon={faClose}
@@ -49,10 +48,13 @@ function MobileNav({ routes }: NavProps) {
                     </Link>
                   ))}
                 </div>
+
                 <div className="w-full px-12">
-                  <button className="bg-accent w-full opacity-100 text-base py-3 text-black font-semibold rounded-lg">
-                    Resume
-                  </button>
+                  <Link href={RESUME_LINK} target="_blank">
+                    <button className="bg-accent w-full opacity-100 text-base py-3 text-black font-semibold rounded-lg">
+                      Resume
+                    </button>
+                  </Link>
                 </div>
               </div>
             </FadeIn>

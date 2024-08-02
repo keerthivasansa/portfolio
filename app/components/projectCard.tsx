@@ -84,7 +84,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           <span className="font-semibold mb-8 block">Skills used: </span>
           <div className="flex flex-row gap-4 flex-wrap">
             {project.skills.map((sk) => (
-              <SkillChip name={sk} key={sk} />
+              <SkillChip name={sk} key={sk}/>
             ))}
           </div>
         </FadeIn>
