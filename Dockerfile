@@ -13,4 +13,4 @@ RUN npm run build
 EXPOSE 80
 EXPOSE 443
 
-CMD ["npx", "serve", "out", "--configuration=production"]
+CMD ["npx", "serve", "out"]
