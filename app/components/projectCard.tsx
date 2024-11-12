@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { capitalize } from "../utils";
 import FadeIn from "./animation/fadeIn";
-import { projectData } from "../data/projects";
+import { encodeName, projectData } from "../data/projects";
 import { useRouter } from "next/navigation";
 
 interface ProjectCardProps {
@@ -26,7 +26,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     let newIndex = amount + index;
     if (newIndex == projectData.length) newIndex = 0;
     else if (newIndex < 0) newIndex = projectData.length - 1;
-    const navProj = projectData[newIndex].name.toLowerCase();
+    const navProj = encodeName(projectData[newIndex].name);
     router.push(`/projects/${navProj}`);
   }
 

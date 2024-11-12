@@ -1,5 +1,5 @@
 import ProjectCard from "@/app/components/projectCard";
-import { projectData, projectMap } from "@/app/data/projects";
+import { encodeName, projectData, projectMap } from "@/app/data/projects";
 
 interface ProjectPageProps {
   params: {
@@ -10,7 +10,7 @@ interface ProjectPageProps {
 export function generateStaticParams() {
   const names = projectData.map((project) => {
     return {
-      name: project.name.toLowerCase(),
+      name: encodeName(project.name),
     };
   });
   return names;
